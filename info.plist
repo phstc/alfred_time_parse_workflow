@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.pablocantero.time_parse</string>
+	<key>connections</key>
+	<dict>
+		<key>830924A3-B0A2-43D1-BFF9-001C8F1530B1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>732324DD-7451-4A60-932A-695B586A839D</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy to Clipboard</string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Pablo Cantero</string>
+	<key>description</key>
+	<string>http://www.ruby-doc.org/stdlib-2.1.1/libdoc/time/rdoc/Time.html#method-i-parse</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Time.parse(date)</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>63</integer>
+				<key>keyword</key>
+				<string>tp</string>
+				<key>script</key>
+				<string>require 'time'
+
+output = %{&lt;?xml version="1.0"?&gt;&lt;items&gt;}
+
+def create_time(time)
+  %{&lt;item arg="#{time}"&gt;&lt;title&gt;#{time.zone}: #{time}&lt;/title&gt;&lt;/item&gt;}
+end
+
+begin
+  if '{query}' == 'now'
+    time = Time.now
+  else
+    time = Time.parse('{query}')
+  end
+  # UTC
+  output += create_time(time.utc)
+  # LOCAL
+  output += create_time(time.localtime)
+rescue =&gt; e
+  output += %{&lt;item&gt;&lt;title&gt;#{e.message}&lt;/title&gt;&lt;/item&gt;}
+end
+
+output += '&lt;/items&gt;'
+
+puts output
+</string>
+				<key>subtext</key>
+				<string>http://www.ruby-doc.org/stdlib-2.1.1/libdoc/time/rdoc/Time.html#method-i-parse</string>
+				<key>title</key>
+				<string>Time.parse(date)</string>
+				<key>type</key>
+				<integer>2</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>830924A3-B0A2-43D1-BFF9-001C8F1530B1</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>732324DD-7451-4A60-932A-695B586A839D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>732324DD-7451-4A60-932A-695B586A839D</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+		<key>830924A3-B0A2-43D1-BFF9-001C8F1530B1</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://pablocantero.com</string>
+</dict>
+</plist>
