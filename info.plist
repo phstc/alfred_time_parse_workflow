@@ -15,6 +15,8 @@
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>Copy to Clipboard</string>
+				<key>vitoclose</key>
+				<false/>
 			</dict>
 		</array>
 	</dict>
@@ -25,18 +27,36 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Time.parse(date)</string>
+	<string>Time.parse</string>
 	<key>objects</key>
 	<array>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
 				<integer>63</integer>
 				<key>keyword</key>
-				<string>tp</string>
+				<string>t</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
 				<key>script</key>
 				<string>require 'time'
 
@@ -64,10 +84,14 @@ output += '&lt;/items&gt;'
 
 puts output
 </string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
 				<key>subtext</key>
 				<string>http://www.ruby-doc.org/stdlib-2.1.1/libdoc/time/rdoc/Time.html#method-i-parse</string>
 				<key>title</key>
-				<string>Time.parse(date)</string>
+				<string>Time.parse</string>
 				<key>type</key>
 				<integer>2</integer>
 				<key>withspace</key>
@@ -78,7 +102,7 @@ puts output
 			<key>uid</key>
 			<string>830924A3-B0A2-43D1-BFF9-001C8F1530B1</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -87,13 +111,15 @@ puts output
 				<false/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>transient</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
 			<string>732324DD-7451-4A60-932A-695B586A839D</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -102,11 +128,15 @@ puts output
 	<dict>
 		<key>732324DD-7451-4A60-932A-695B586A839D</key>
 		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
 			<key>ypos</key>
 			<real>100</real>
 		</dict>
 		<key>830924A3-B0A2-43D1-BFF9-001C8F1530B1</key>
 		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
 			<key>ypos</key>
 			<real>100</real>
 		</dict>
