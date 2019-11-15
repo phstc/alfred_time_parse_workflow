@@ -3,9 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.pablocantero.time_parse</string>
+	<string></string>
 	<key>connections</key>
 	<dict>
+		<key>21A27336-C544-43F8-8733-4F2EFB1A68AC</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>732324DD-7451-4A60-932A-695B586A839D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>830924A3-B0A2-43D1-BFF9-001C8F1530B1</key>
 		<array>
 			<dict>
@@ -23,11 +36,11 @@
 	<key>createdby</key>
 	<string>Pablo Cantero</string>
 	<key>description</key>
-	<string>http://www.ruby-doc.org/stdlib-2.1.1/libdoc/time/rdoc/Time.html#method-i-parse</string>
+	<string></string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Time.parse</string>
+	<string>Time</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -44,7 +57,7 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>63</integer>
+				<integer>62</integer>
 				<key>keyword</key>
 				<string>t</string>
 				<key>queuedelaycustom</key>
@@ -58,31 +71,10 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>require 'time'
+				<string>source "${HOME}/.zshrc"
 
-output = %{&lt;?xml version="1.0"?&gt;&lt;items&gt;}
 
-def create_time(time)
-  %{&lt;item arg="#{time}"&gt;&lt;title&gt;#{time.zone}: #{time}&lt;/title&gt;&lt;/item&gt;}
-end
-
-begin
-  if '{query}' == 'now'
-    time = Time.now
-  else
-    time = Time.parse('{query}')
-  end
-  # UTC
-  output += create_time(time.utc)
-  # LOCAL
-  output += create_time(time.localtime)
-rescue =&gt; e
-  output += %{&lt;item&gt;&lt;title&gt;#{e.message}&lt;/title&gt;&lt;/item&gt;}
-end
-
-output += '&lt;/items&gt;'
-
-puts output
+ruby ./t.rb "{query}"
 </string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
@@ -93,7 +85,7 @@ puts output
 				<key>title</key>
 				<string>Time.parse</string>
 				<key>type</key>
-				<integer>2</integer>
+				<integer>5</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -121,11 +113,70 @@ puts output
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>62</integer>
+				<key>keyword</key>
+				<string>now</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>source "${HOME}/.zshrc"
+
+
+ruby ./t.rb now</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>http://www.ruby-doc.org/stdlib-2.1.1/libdoc/time/rdoc/Time.html#method-i-parse</string>
+				<key>title</key>
+				<string>Time.parse</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>21A27336-C544-43F8-8733-4F2EFB1A68AC</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>21A27336-C544-43F8-8733-4F2EFB1A68AC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>315</integer>
+			<key>ypos</key>
+			<integer>375</integer>
+		</dict>
 		<key>732324DD-7451-4A60-932A-695B586A839D</key>
 		<dict>
 			<key>xpos</key>
@@ -141,6 +192,10 @@ puts output
 			<real>100</real>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string></string>
 	<key>webaddress</key>
 	<string>http://pablocantero.com</string>
 </dict>
